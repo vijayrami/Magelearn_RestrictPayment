@@ -1,0 +1,25 @@
+{
+    "name": "magelearn/module-restrictpayment",
+    "description": "Disable specific payment methods on checkout page when cart have at least one product from specific category.",
+    "type": "magento2-module",
+    "license": "OSL-3.0",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        },
+        {
+            "email": "vijaymrami@gmail.com",
+            "name": "vijay rami"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Magelearn\\RestrictPayment\\": ""
+        }
+    }
+}
