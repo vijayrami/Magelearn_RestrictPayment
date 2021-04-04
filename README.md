@@ -33,7 +33,7 @@ Disable specific payment methods on checkout page when cart have at least one pr
 This module has been tested and validated to work on Magento versions 2.3 to 2.4.2.
 
 ## Bugs & Issues
-If you find a bug or issue please create a new issue [here](https://github.com/vijayrami/Magelearn_FreeShippingProgressBar/issues) and include as much detail and context as possible including screenshots.
+If you find a bug or issue please create a new issue [here](https://github.com/vijayrami/Magelearn_RestrictPayment/issues) and include as much detail and context as possible including screenshots.
 
 ## License
 This module is licensed under the Open Software License V3.0 which you can refer to [here](LICENSE.txt).
