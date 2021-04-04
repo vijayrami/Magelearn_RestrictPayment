@@ -4,7 +4,7 @@ Disable specific payment methods on checkout page when cart have at least one pr
 ### Screenshots
 
 #### Order Value Below Free Shipping Minimum
-<a href="https://postimg.cc/dD1vnq4J" target="_blank"><img src="https://i.postimg.cc/dD1vnq4J/Checkout.png" alt="Checkout"/></a><br/><br/>
+[![Checkout-1.png](https://i.postimg.cc/ZnLKVsmx/Checkout-1.png)](https://postimg.cc/64yXQ0y8)
 <a href="https://postimg.cc/64yXQ0y8" target="_blank"><img src="https://i.postimg.cc/64yXQ0y8/Checkout-1.png" alt="Checkout-1"/></a><br/><br/>
 
 
