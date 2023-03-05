@@ -10,6 +10,7 @@ use Magento\Framework\Event\ObserverInterface;
 use Magento\Catalog\Api\ProductRepositoryInterface;
 use Magento\Framework\Exception\LocalizedException;
 use Magento\Framework\Exception\NoSuchEntityException;
+use Magelearn\RestrictPayment\Helper\Data as DataHelper;
 
 class MethodIsActive implements ObserverInterface
 {
@@ -17,15 +18,19 @@ class MethodIsActive implements ObserverInterface
     protected $_cart;
     protected $_checkoutSession;
     protected $productRepository;
+    protected $dataHelper;
+
     public function __construct(
         Cart $cart,
         Session $checkoutSession,
-        ProductRepositoryInterface $productRepository
+        ProductRepositoryInterface $productRepository,
+        DataHelper $dataHelper
     )
     {
         $this->_cart = $cart;
         $this->_checkoutSession = $checkoutSession;
         $this->productRepository = $productRepository;
+        $this->dataHelper = $dataHelper;
     }
 
     /**
@@ -39,7 +44,7 @@ class MethodIsActive implements ObserverInterface
     public function execute(Observer $observer)
     {
         $quote = $this->getCheckoutSession()->getQuote();
-        $categoryID = 52; //Add your category ID to disable specific payment method on its products
+        $categoryID = $this->getCategoryId(); //Add your category ID to disable specific payment method on its products
         $items = $quote->getAllItems();
         $flag = false;
         foreach($items as $item) {
@@ -68,5 +73,17 @@ class MethodIsActive implements ObserverInterface
     public function getCheckoutSession()
     {
         return $this->_checkoutSession;
+    }
+    
+    /**
+     * Get category ID
+     *
+     * @return integer|null
+     * @throws NoSuchEntityException
+     */
+    public function getCategoryId()
+    {
+        $categoryId = $this->dataHelper->getConfig('magelearn_restrictPayment/categoryselection_setting/categorylist');
+        return $categoryId;
     }
 }
